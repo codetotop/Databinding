@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+  <data>
+
+    <import type="android.view.View" />
+
+    <variable
+      name="Student"
+      type="com.example.databindingexample.advance.Student" />
+
+    <variable
+      name="StudentListener"
+      type="com.example.databindingexample.advance.StudentListener" />
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".basic.MainActivity">
+
+    <TextView
+      android:id="@+id/name"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="monospace"
+      android:text="@{Student.name}"
+      android:textColor="@android:color/holo_green_dark"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="Name" />
+
+    <TextView
+      android:id="@+id/age"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="12dp"
+      android:fontFamily="monospace"
+      android:text="@{Student.age}"
+      android:textColor="@android:color/holo_green_dark"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="@id/name"
+      app:layout_constraintStart_toStartOf="@id/name"
+      app:layout_constraintTop_toBottomOf="@+id/name"
+      tools:text="Age" />
+
+    <TextView
+      android:id="@+id/study_class"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="12dp"
+      android:fontFamily="monospace"
+      android:text="@{Student.studyClass}"
+      android:textColor="@android:color/holo_green_dark"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="@id/name"
+      app:layout_constraintStart_toStartOf="@id/name"
+      app:layout_constraintTop_toBottomOf="@+id/age"
+      tools:text="Study Class" />
+
+    <Button
+      android:id="@+id/random_user"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="40dp"
+      android:layout_marginEnd="20dp"
+      android:fontFamily="monospace"
+      android:onClick="@{() -> StudentListener.translateStudy(Student)}"
+      android:text="Traslate class"
+      android:textAllCaps="false"
+      android:textColor="@android:color/holo_red_dark"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/study_class" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
