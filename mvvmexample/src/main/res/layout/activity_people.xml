@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="mainViewModel"
+      type="com.example.mvvmexample.viewmodel.PeopleViewModel"/>
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center"
+      android:orientation="vertical">
+
+      <ProgressBar
+        android:id="@+id/progress_people"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:visibility="@{mainViewModel.mPeopleProgress}"/>
+
+      <TextView
+        android:id="@+id/label_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@{mainViewModel.mMessageLabel}"
+        app:visibility="@{mainViewModel.mPeopleLabel}"/>
+
+      <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_people"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        app:visibility="@{mainViewModel.mPeopleList}"
+        tools:listItem="@layout/item_people"/>
+
+    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/fab"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom|end"
+      android:layout_margin="@dimen/fab_margin"
+      android:onClick="@{mainViewModel::onClickFabLoad}"
+      android:src="@drawable/ic_add_24dp"
+      app:fabSize="normal"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_anchorGravity="bottom|end"/>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
