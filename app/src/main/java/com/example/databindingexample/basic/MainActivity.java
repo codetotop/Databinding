@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityListe
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    //setContentView(R.layout.activity_main);
     binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
     binding.setUser(new User("Nguyễn Bá Dũng", "123456@@"));
     binding.setListener(this);

@@ -18,8 +18,7 @@ public class StudentActivity extends AppCompatActivity implements StudentListene
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    //setContentView(R.layout.activity_main2);
-    ActivityMain2Binding binding = DataBindingUtil.setContentView(this, R.layout.activity_main2);
+    ActivityMain2Binding binding = DataBindingUtil.setContentView(this, R.layout.activity_student);
     student = new Student("Nguyễn Huy nam", "23", "Math");
     binding.setStudent(student);
     binding.setStudentListener(this);

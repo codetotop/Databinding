@@ -22,14 +22,9 @@
     tools:context=".basic.MainActivity">
 
     <include
-      layout="@layout/content_activity_main2"
+      layout="@layout/content_activity_student"
       bind:Student="@{Student}"
       bind:StudentListener="@{StudentListener}" />
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
-
-  <!--Khi cần dùng data binding cho layout thì t cần thêm thẻ layout, variable
-     ở cả parent_layout và content_layout.
-     Sau đó bind data từ parent_layout cho content_layout như trên
-  -->

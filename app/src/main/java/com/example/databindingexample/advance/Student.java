@@ -4,9 +4,6 @@ import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.library.baseAdapters.BR;
 
-/*Sử dụng BaseObservable để lắng nghe sự thay đổi của dữ liệu và cập nhật view ngay sau khi thay đổi dữ liệu.
-  Bằng cách thêm annotation @Bindable vào các phương thức get
-  và sử dụng phương thức notifyPropertyChanged(BR.name_attribute) để cập nhật giao diện tức thời*/
 public class Student extends BaseObservable {
   private String name;
   private String age;
