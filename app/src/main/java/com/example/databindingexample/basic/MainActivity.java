@@ -1,13 +1,13 @@
 package com.example.databindingexample.basic;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.example.databindingexample.R;
-import com.example.databindingexample.advance.Main2Activity;
+import com.example.databindingexample.advance.StudentActivity;
 import com.example.databindingexample.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityListe
 
   @Override
   public void nextActivity() {
-    Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+    Intent intent = new Intent(MainActivity.this, StudentActivity.class);
     startActivity(intent);
   }
 }

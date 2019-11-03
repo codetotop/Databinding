@@ -46,7 +46,7 @@ public class Student extends BaseObservable {
     return studyClass;
   }
 
-  public void setStudyClass(String studyClass) {
+  public void setClass(String studyClass) {
     this.studyClass = studyClass;
     notifyPropertyChanged(BR.studyClass);
   }

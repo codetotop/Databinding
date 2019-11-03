@@ -1,10 +1,9 @@
 package com.example.databindingexample.advance;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-
-import android.database.DatabaseUtils;
-import android.os.Bundle;
 
 import com.example.databindingexample.R;
 import com.example.databindingexample.databinding.ActivityMain2Binding;
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Main2Activity extends AppCompatActivity implements StudentListener {
+public class StudentActivity extends AppCompatActivity implements StudentListener {
   Student student;
 
   @Override
@@ -28,13 +27,13 @@ public class Main2Activity extends AppCompatActivity implements StudentListener 
   }
 
   @Override
-  public void translateStudy(Student student) {
+  public void translateClass(Student student) {
     List<String> study_class = new ArrayList<>();
     study_class.add("Physical");
     study_class.add("Math");
     study_class.add("Android Programmer");
     study_class.add("IOS Programmer");
     int random_class = new Random().nextInt(4);
-    student.setStudyClass(study_class.get(random_class));
+    student.setClass(study_class.get(random_class));
   }
 }
